@@ -15,6 +15,8 @@ f = wmi.WMI()
 #   owner_name = f"{owner_info[0]}\\{owner_info[2]}" if owner_info[2] else "N/A"
 #   print("ID: {0}\nName: {1}\nOwner Name: {2}\nDescription: {3}\n".format(process.ProcessId , process.Name , owner_name , process.Description));
 
+sus_process = []
+
 def get_company_info(file_path):
   try:
     info = win32api.GetFileVersionInfo(file_path,'\\');
@@ -32,6 +34,9 @@ def info_running_process():
     try:
       process_info = proc.info
       company_name = get_company_info(process_info['exe']);
+      if(company_name == 'null'):
+        sus_process.append([process_info['pid'], process_info['name']]);
       print(f'''ID : {process_info['pid']}\nName: {process_info['name']}\nFolder Path: {process_info['exe']}\nCompany Name: {company_name}\n\n''');
     except (psutil.NoSuchProcess , psutil.AccessDenied,psutil.ZombieProcess):
       print("Error");
+  return sus_process;
