@@ -2,4 +2,4 @@ backup
 __pycache__
 .vscode
 .gitignore
-
+main_memory_dump.dmp
