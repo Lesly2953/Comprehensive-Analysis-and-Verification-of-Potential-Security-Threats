@@ -1,1 +1,1 @@
-Run main.py
+Run main.py as an administrator
