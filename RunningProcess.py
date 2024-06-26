@@ -26,10 +26,10 @@ def info_running_process():
   for proc in psutil.process_iter(['pid','name','exe']):
     try:
       process_info = proc.info
-      main_dmp.create_memory_dump(process_info['pid'],dump_file)
+      #main_dmp.create_memory_dump(process_info['pid'],dump_file)
       if(susproc.susProcess(process_info)):
         sus_process.append([process_info['pid'],process_info['name']])
-      print(f'''ID : {process_info['pid']}\nName: {process_info['name']}\nFolder Path: {process_info['exe']}\n''');
+      #print(f'''ID : {process_info['pid']}\nName: {process_info['name']}\nFolder Path: {process_info['exe']}\n''');
     except (psutil.NoSuchProcess , psutil.AccessDenied,psutil.ZombieProcess):
       print("Error");
   return sus_process;
