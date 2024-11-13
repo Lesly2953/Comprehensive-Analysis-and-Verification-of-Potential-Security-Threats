@@ -1,6 +1,0 @@
-backup
-__pycache__
-.vscode
-.gitignore
-main_memory_dump.dmp
-main_memory_dump_.dmp
