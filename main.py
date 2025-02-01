@@ -4,8 +4,8 @@ from ip_checking import is_ip_legitimate
 import csv
 import os
 
-ABUSEIPDB_API_KEY = os.getenv("ABUSEIPDB_API_KEY","e4537b62b06eca850afdbb6e68fa745bb6dffa17405dc4f60a28716ed2fe955dcc875fcb4b7a02ad")
-VIRUSTOTAL_API_KEY = os.getenv("VIRUSTOTAL_API_KEY", "0e585977a39040f2a97aeac65a17e458f408c8b2e4eb4c9c40c08031f366381a")
+ABUSEIPDB_API_KEY = os.getenv("ABUSEIPDB_API_KEY","Key paste here")
+VIRUSTOTAL_API_KEY = os.getenv("VIRUSTOTAL_API_KEY", "Key paste here")
 
 def main():
     suspected_processes = run_proc.info_running_process()
